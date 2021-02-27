@@ -1,6 +1,8 @@
 ﻿using Business.Concrete;
+using DataAccess.Concrete.EntityFramework;
 using DataAccess.Concrete.InMemory;
 using System;
+
 
 namespace ConsoleUI
 {
@@ -13,7 +15,7 @@ namespace ConsoleUI
         //Burada tüm katmanları kullanacağımız için hepsinden referans alacağız.ConsoleUI sağ tık->Project Reference'dan hepsini seç.
         static void Main(string[] args)
         {
-            ProductManager productManager = new ProductManager(new InMemoryProductDal()); // Burada InMemoryProductDal yerine EfProductDal kullan(Sisteminin değiştiğini düşün).
+            ProductManager productManager = new ProductManager(new EfProductDal()); // Burada InMemoryProductDal yerine EfProductDal kullan(Sisteminin değiştiğini düşün).
 
             foreach (var product in productManager.GetAll())
             {

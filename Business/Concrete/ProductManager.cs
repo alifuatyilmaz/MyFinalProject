@@ -5,6 +5,8 @@ using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
+using System.Linq.Expressions;
 
 namespace Business.Concrete
 {
@@ -17,7 +19,7 @@ namespace Business.Concrete
             _productDal = productDal;
         }
 
-        public List<Product> GetAll()
+        public List<Product> GetAll() // DataAccess'te Concrete'te yaptığımız her işlemi burası ile ilişkilendir.
         {
             //İş kodları(İf)
             return _productDal.GetAll();
