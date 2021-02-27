@@ -21,6 +21,14 @@ namespace ConsoleUI
             {
                 Console.WriteLine(product.ProductName);
             }
+            foreach (var product in productManager.GetAllByCategoryId(2)) // CategoryId'si 2 olanları listeler.
+            {
+                Console.WriteLine(product.ProductName);
+            }
+            foreach (var product in productManager.GetByUnitPrice(50,100)) //UnitPrice'ı 50 ile 100 arası olanları listeler.
+            {
+                Console.WriteLine(product.ProductName);
+            }
         }
     }
 }
