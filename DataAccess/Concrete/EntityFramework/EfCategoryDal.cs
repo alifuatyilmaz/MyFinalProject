@@ -1,4 +1,5 @@
-﻿using DataAccess.Abstract;
+﻿using Core.DataAccess.EntityFramework;
+using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -7,8 +8,10 @@ using System.Text;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfCategoryDal : ICategoryDal
+    public class EfCategoryDal : EfEntityRepositoryBase<Category, NorthwindContext>, ICategoryDal
     {
+        /* Bu kodlara ihtiyacımız yok çünkü core katmanından alacak.Aynısı EfOrderDal,EfProductDal'dada yaptık.
+        
         public void Add(Category entity)
         {
             throw new NotImplementedException();
@@ -33,5 +36,6 @@ namespace DataAccess.Concrete.EntityFramework
         {
             throw new NotImplementedException();
         }
+        */
     }
 }

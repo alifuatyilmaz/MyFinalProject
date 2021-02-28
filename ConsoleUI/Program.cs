@@ -15,8 +15,8 @@ namespace ConsoleUI
         //Burada tüm katmanları kullanacağımız için hepsinden referans alacağız.ConsoleUI sağ tık->Project Reference'dan hepsini seç.
         static void Main(string[] args)
         {
-            ProductManager productManager = new ProductManager(new EfProductDal()); // Burada InMemoryProductDal yerine EfProductDal kullan(Sisteminin değiştiğini düşün).
-
+            //ProductTest(); // Metot haline getirildi
+            /*
             foreach (var product in productManager.GetAll())
             {
                 Console.WriteLine(product.ProductName);
@@ -25,7 +25,20 @@ namespace ConsoleUI
             {
                 Console.WriteLine(product.ProductName);
             }
-            foreach (var product in productManager.GetByUnitPrice(50,100)) //UnitPrice'ı 50 ile 100 arası olanları listeler.
+            */
+
+            CategoryManager categoryManager = new CategoryManager();
+            foreach (var category in categoryManager.GetAll()) 
+            {
+                Console.WriteLine(category.CategoryName);
+            }
+
+        }
+
+        private static void ProductTest()
+        {
+            ProductManager productManager = new ProductManager(new EfProductDal()); // Burada InMemoryProductDal yerine EfProductDal kullan(Sisteminin değiştiğini düşün).
+            foreach (var product in productManager.GetByUnitPrice(50, 100)) //UnitPrice'ı 50 ile 100 arası olanları listeler.
             {
                 Console.WriteLine(product.ProductName);
             }
